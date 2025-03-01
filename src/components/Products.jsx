@@ -72,7 +72,7 @@ const Products = () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="border rounded-lg p-4 bg-white shadow-md transform transition-transform hover:scale-105"
+            className="border rounded-lg p-4 hover:bg-gray-300 bg-white shadow-md transform transition-transform transition-all duration-500 hover:scale-105"
           >
             <h3 className="font-semibold text-lg">{product.title}</h3>
             <img className="w-40 h-auto mx-auto my-4" src={product.image} alt={product.title} />
@@ -81,7 +81,7 @@ const Products = () => {
             </p>
             <button
               onClick={() => addToCart(product)}
-              className="bg-green-500 text-white px-4 py-2 rounded-md mt-4 hover:bg-green-600 transition-all"
+              className="bg-green-500 hover:text-lg cursor-pointer text-white px-4 py-2 rounded-md mt-4 hover:bg-green-700 transition-all duration-300 "  
             >
               Add to Cart
             </button>
@@ -89,15 +89,15 @@ const Products = () => {
         ))}
       </div>
 
-      {/* Floating "View Cart" Button */}
+      
       <button
         onClick={() => setIsCartOpen(true)}
-        className="fixed bottom-6 right-6 bg-orange-500 text-white px-6 py-3 rounded-full shadow-lg text-lg font-bold hover:bg-orange-600 transition-transform transform hover:scale-110"
+        className="fixed bottom-6 cursor-pointer hover:text-lg right-6 bg-orange-500 text-white px-6 py-3 rounded-full shadow-lg text-lg font-bold hover:bg-orange-600 transition-transform transform hover:scale-110"
       >
         🛍️ View Cart
       </button>
 
-      {/* Cart Modal */}
+     
       {isCartOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white w-96 p-6 rounded-lg shadow-lg relative">
